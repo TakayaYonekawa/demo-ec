@@ -21,13 +21,17 @@ export const ItemDetail = () => {
   const {detail}:any= useSelector((store) => store.items);
   const { productId } = useParams();
   const open:boolean = true;
-
-
-
+  
+  const onUnload = (e: { preventDefault: () => void; returnValue: string; }) => {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+    // イベントの設定
+    window.addEventListener('beforeunload', onUnload);
 
   useEffect(() => {
     dispatch(getDetail(productId));
-  }, []);
+  });
 
 
   return (

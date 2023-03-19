@@ -16,6 +16,19 @@ function CartContainer() {
   const { cartItems, cartShow,totalPrice } = useSelector((store) => store.cart);
 
   useEffect(() => {
+    // イベントの設定
+    window.addEventListener('beforeunload', onUnload);
+    return () => {
+      // イベントの設定解除
+      window.removeEventListener('beforeunload', onUnload);
+    }
+  })
+  const onUnload = (e: { preventDefault: () => void; returnValue: string; }) => {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+
+  useEffect(() => {
     dispatch(handleCart());
     dispatch(handleTotalPrice());
   }, []);

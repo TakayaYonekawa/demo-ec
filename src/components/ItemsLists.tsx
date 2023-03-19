@@ -27,7 +27,7 @@ export const ItemsLists = () => {
   // API反映
   useEffect(() => {
     dispatch(getItems());
-  }, [dispatch]);
+  }, []);
 
 
   // 絞り込み

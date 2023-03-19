@@ -5,13 +5,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const getItems = createAsyncThunk('items/getItems', async () => {
     return await fetch('https://fakestoreapi.com/products').then((res) =>
       res.json()
-    );
+    ).catch(() => {
+      console.log('error');
+      
+    });
   });
 
   export const getDetail = createAsyncThunk('items/getDetail', async (id: string | undefined) => {
     return await fetch(`https://fakestoreapi.com/products/${id}`).then((res) =>
       res.json()
-    );
+    ).catch(() => {
+      console.log('error');
+      
+    });
   });
 
 const initialState = {

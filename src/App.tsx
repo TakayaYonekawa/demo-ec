@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { ItemDetail } from './components/ItemDetail';
 import { ItemsLists } from './components/ItemsLists';
 import CartContainer from './components/cart/CartContainer';
+import NotFound from './NotFound';
 
 
  const App = () => {
@@ -13,10 +14,11 @@ import CartContainer from './components/cart/CartContainer';
     <div className="App">
       <BrowserRouter>
       <Header/>
-        <Routes>
+        <Routes >
           <Route  path='/' element={<ItemsLists/>}/>
-          <Route  path={`detail/:productId`} element={<ItemDetail/>}/>
+          <Route  path={`/detail/:productId`} element={<ItemDetail/>}/>
           <Route  path='cart' element={<CartContainer/>}/>
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
