@@ -22,12 +22,11 @@ export const ItemDetail = () => {
   const { productId } = useParams();
   const open:boolean = true;
   
-  const onUnload = (e: { preventDefault: () => void; returnValue: string; }) => {
-    e.preventDefault();
-    e.returnValue = '';
-  }
-    // イベントの設定
-    window.addEventListener('beforeunload', onUnload);
+  // const onUnload = (e: { preventDefault: () => void; returnValue: string; }) => {
+  //   e.preventDefault();
+  //   e.returnValue = '';
+  // }
+  //   window.addEventListener('beforeunload', onUnload);
 
   useEffect(() => {
     dispatch(getDetail(productId));
