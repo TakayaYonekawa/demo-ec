@@ -1,18 +1,18 @@
 import { Button } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "../store";
+import { useSelector } from "../../store";
 import {
   clickPrice,
   handleMaxPrice,
   handleMinPrice,
-} from "../redux/item/itemSlice";
+} from "../../redux/item/itemSlice";
 import {
   createSearchParams,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import CategoryLists from "../categoryLists";
+import CategoryLists from "../../categoryLists";
 
 export const Sidebar = () => {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import {  Backdrop, Button, CircularProgress } from "@mui/material";
 import React, { useEffect } from "react";
-import { AppDispatch, useSelector } from "../store";
+import { AppDispatch, useSelector } from "../../store";
 import {  useParams } from "react-router-dom";
-import { getDetail } from "../redux/item/itemSlice";
+import { getDetail } from "../../redux/item/itemSlice";
 import { useDispatch } from "react-redux";
-import { addCart } from "../redux/cart/cartSlice";
+import { addCart } from "../../redux/cart/cartSlice";
 
 
 export const ItemDetail = () => {

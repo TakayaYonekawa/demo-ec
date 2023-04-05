@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import Item from "./Item";
-import { Sidebar } from "./Sidebar";
-import { getItems } from "../redux/item/itemSlice";
-import { AppDispatch, useSelector } from "../store";
+import { Sidebar } from "../templates/Sidebar";
+import { getItems } from "../../redux/item/itemSlice";
+import { AppDispatch, useSelector } from "../../store";
+import Item from "../../parts/Item";
 
 export const ItemsLists = () => {
   type apiArray = {
@@ -73,7 +73,6 @@ export const ItemsLists = () => {
               })}
         </div>
       ) : (
-
         <div>Loading...</div>
       )}
     </div>

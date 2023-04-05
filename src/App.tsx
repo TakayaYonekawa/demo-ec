@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './scss/style.scss';
-import { Header } from './components/Header';
-import { ItemDetail } from './components/ItemDetail';
-import { ItemsLists } from './components/ItemsLists';
+import { Header } from './parts/Header';
+import { ItemDetail } from './components/views/ItemDetail';
+import { ItemsLists } from './components/views/ItemsLists';
 import CartContainer from './components/cart/CartContainer';
 import NotFound from './NotFound';
 
