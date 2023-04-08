@@ -1,3 +1,8 @@
+https://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@github.com/TakayaYonekawa/demo-ec.git
+
+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
+
+
 {
     "data": [
         {

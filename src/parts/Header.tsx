@@ -1,6 +1,8 @@
-import React, {  useEffect } from "react";
+import React from "react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
+
+
 
 export const Header = () => {
   let   totalAmount:number = 0;

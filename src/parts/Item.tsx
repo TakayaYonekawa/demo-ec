@@ -12,7 +12,7 @@ type apiArray = {
 function Item({ id, title, price, category, image }: apiArray) {
   return (
     <div className="item">
-      <Link to={`/detail/${id}`}>
+      <Link to={`detail/${id}`}>
         <div className="item__image">
         <img className="item__image__img" src={image}  alt="" />
         </div>

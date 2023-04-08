@@ -1,24 +1,24 @@
 import { Button } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "../store";
+import { useSelector } from "../../store";
 import {
   clickPrice,
   handleMaxPrice,
   handleMinPrice,
-} from "../redux/item/itemSlice";
+} from "../../redux/item/itemSlice";
 import {
   createSearchParams,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import CategoryLists from "../categoryLists";
+import CategoryLists from "../../categoryLists";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { maxPrice, minPrice } = useSelector((state) => state.items);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams('');
   let params = "";
 
   // カテゴリ絞り込み
@@ -30,11 +30,12 @@ export const Sidebar = () => {
       category: checkedName,
     }).toString();
     navigate(`?${params}`, { replace: false });
+    setSearchParams(params);
+
+
   };
 
-  useEffect(() => {
-    setSearchParams(params);
-  }, [params]);
+
 
   return (
     <div className="sidebar">
@@ -96,4 +97,3 @@ export const Sidebar = () => {
   );
 };
 
-// https://www.hypertextcandy.com/react-tutorial-04-form-and-events
