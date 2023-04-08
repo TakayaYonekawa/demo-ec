@@ -44,7 +44,6 @@ const cartSlice = createSlice({
       arr = localStorage.getItem('cartItems');
       state.cartItems = arr;
       window.location.href = '/';
-      //  window.location.reload();
       alert('カートへ追加が完了しました。')
 
     },
@@ -52,7 +51,6 @@ const cartSlice = createSlice({
     removeAll: (state) => {
       state.cartItems = [];
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
-      // window.location.reload();
       window.location.href = '/';
 
     },
@@ -60,7 +58,6 @@ const cartSlice = createSlice({
       const itemId = action.payload;
       state.cartShow = state.cartShow.filter((item) => item.id !== itemId);
       localStorage.setItem('cartItems', JSON.stringify(state.cartShow));
-      // window.location.reload();
       window.location.href = '/';
 
     },

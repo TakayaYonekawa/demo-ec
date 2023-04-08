@@ -27,11 +27,3 @@ import NotFound from './NotFound';
 export default App
 
 
-// https://github.com/dmalvia/React_Redux_Tutorial
-// https://fakestoreapi.com/
-// https://github.com/Shin-sibainu/redux-for-beginner-udemy/blob/main/src/features/cart/CartSlice.js
-// https://github.com/Shin-sibainu/todolist-react-typescript/blob/main/src/App.tsx
-// https://github.com/fireclint/filter-contact-list-react
-// https://qiita.com/cocottejs/items/7afe6d5f27ee7c36c61f
-// https://github.com/suzu1997/react-redux-ec
-// https://github.com/Shin-sibainu/react-todoapp-youtube/blob/main/todoapp/src/components/TodoList.jsx

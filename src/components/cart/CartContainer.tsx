@@ -56,11 +56,6 @@ function CartContainer() {
             })
           : ""}
 
-        {/* {cartItems
-          ? cartItems.map((item: cartArray) => {
-              return <CartItem key={item.id} {...item} />;
-            })
-          : ""} */}
       </div>
       <footer>
         <hr />
