@@ -11,6 +11,9 @@
 # production
 /build
 
+# memo
+memo.txt
+
 # misc
 .DS_Store
 .env.local
