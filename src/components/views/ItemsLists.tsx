@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { Sidebar } from "../templates/Sidebar";
-import { getItems } from "../../redux/item/itemSlice";
 import { AppDispatch, useSelector } from "../../store";
 import Item from "../../parts/Item";
+import axios from "axios";
+import { useDispatch } from "react-redux";
 
 export const ItemsLists = () => {
   type apiArray = {
@@ -14,36 +14,47 @@ export const ItemsLists = () => {
     category: string;
     image: string;
   };
-
   const dispatch = useDispatch<AppDispatch>();
-  const {items, maxPriceRange, minPriceRange} = useSelector((store) => store.items)
+  const [items, setItems] = useState<apiArray[]>([]);
+  const { maxPriceRange, minPriceRange } = useSelector((store) => store.items);
   const [filterItem, setFilterItem] = useState<apiArray[]>([]);
   const [filterFlag, setFilterFlag] = useState<boolean>(false);
   const [searchParams] = useSearchParams();
   const categoryParams = searchParams.get("category");
 
-
+  // API(Fakeshop)
+  const getItems = () => {
+    axios
+      .get<apiArray[]>("https://fakestoreapi.com/products")
+      .then((res) => {
+        setItems(res.data);
+      })
+      .catch(() => {
+        console.log("error");
+      });
+  };
 
   // API反映
   useEffect(() => {
-    dispatch(getItems());
+    getItems();
   }, []);
 
-
   // 絞り込み
-  useEffect(() => {
+
+  const fitlerClick = () => {
     let copyPosts = [...items];
 
     // 料金絞り込み
-    if(!minPriceRange && maxPriceRange === 100000){
+    if (!minPriceRange && maxPriceRange === 100000) {
       setFilterFlag(false);
-    } else if(minPriceRange || maxPriceRange){
+    } else if (minPriceRange || maxPriceRange) {
       copyPosts = copyPosts.filter((post: apiArray) => {
-       return (post.price < maxPriceRange/100 && post.price > minPriceRange/100)
-      })
+        return (
+          post.price < maxPriceRange / 100 && post.price > minPriceRange / 100
+        );
+      });
       setFilterItem(copyPosts);
       setFilterFlag(true);
-
     }
 
     // カテゴリー絞り込み
@@ -57,7 +68,12 @@ export const ItemsLists = () => {
       setFilterFlag(true);
     }
     setFilterItem(copyPosts);
-  }, [categoryParams ,maxPriceRange, minPriceRange]);
+  };
+
+  useEffect(() => {
+    // 料金絞り込み
+    fitlerClick();
+  }, [categoryParams, maxPriceRange, minPriceRange]);
 
   return (
     <div className="container item-lists-wrap flex">

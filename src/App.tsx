@@ -7,7 +7,6 @@ import { ItemsLists } from './components/views/ItemsLists';
 import CartContainer from './components/cart/CartContainer';
 import NotFound from './NotFound';
 
-
  const App = () => {
 
   return (
