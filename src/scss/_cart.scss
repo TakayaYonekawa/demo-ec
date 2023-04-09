@@ -1,21 +1,4 @@
-.btn {
-  text-transform: uppercase;
-  background: var(--color-primary);
-  color: var(--color-white);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  font-weight: 700;
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-.btn:hover {
-  color: var(--color-primary);
-  background: var(--color-primary-light);
-}
+
 .remove-btn {
   color: var(--color-primary);
   letter-spacing: var(--spacing);
@@ -86,18 +69,42 @@ nav svg {
   margin-top: 40px;
   padding: 1.5rem 0;
   max-width: var(--fixed-width);
+
+  &__empty{
+    &__text{
+      text-transform: lowercase;
+      color: var(--color-grey-5);
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  &__total {
+    margin-top: 4rem;
+    text-align: center;
+    &__price {
+      &__text {
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+      }
+    }
+
+    &__clear {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
 }
-.cart h2 {
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.empty-cart {
-  text-transform: lowercase;
-  color: var(--color-grey-5);
-  margin-top: 1rem;
-  text-align: center;
-}
+
+
 .cart-logo {
   position: relative;
   &__amount {
@@ -118,30 +125,13 @@ nav svg {
   }
 }
 
-.clear-btn {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.cart footer {
-  margin-top: 4rem;
-  text-align: center;
-}
-.cart-total h4 {
-  text-transform: capitalize;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
-
 /*
   Cart Item
   */
 .cart-item {
   display: grid;
   align-items: center;
-  grid-template-columns: auto 1fr 2fr;
+  grid-template-columns: auto 1fr 1fr;
   grid-column-gap: 16px;
   margin: 15px 0;
   &__image {
@@ -149,14 +139,25 @@ nav svg {
     min-height: 240px;
     object-fit: cover;
   }
-}
-
-.cart-item h4 {
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-.item-price {
-  color: var(--color-grey-5);
+  &__title {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  &__price {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--color-grey-5);
+  }
+  &__remove {
+    color: var(--color-primary);
+    letter-spacing: var(--spacing);
+    cursor: pointer;
+    font-size: 0.85rem;
+    background: transparent;
+    border: none;
+    margin-top: 0.375rem;
+    transition: var(--transition);
+  }
 }
 
 .amount-btn:hover svg {

@@ -18,7 +18,7 @@ function Item({ id, title, price, category, image }: apiArray) {
         </div>
 
         <div className="item__text">
-          <div className="text-overflow">{title}</div>
+          <div className="item__text-overflow">{title}</div>
           <div className="">{price * 100}円 </div>
           <div className="">{category}</div>
         </div>

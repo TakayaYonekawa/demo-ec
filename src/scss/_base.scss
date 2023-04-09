@@ -58,13 +58,7 @@ h1,h2,h3,ul,li{
   flex-wrap: wrap;
 }
 
-.text-overflow{
-  text-overflow: ellipsis;
-	-webkit-text-overflow: ellipsis; /* Safari */
-	-o-text-overflow: ellipsis; /* Opera */
-  overflow: hidden;
-  white-space: nowrap;
-}
+
 .container{
   width: 100%;
   max-width: 1000px;

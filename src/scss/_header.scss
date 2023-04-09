@@ -8,4 +8,21 @@
       align-items: center;
     }
   }
+  &__cart {
+    position: relative;
+    &-amount {
+      position: absolute;
+      right: -16px;
+      bottom: -6px;
+      background-color: red;
+      color: white;
+      line-height: 140%;
+      text-align: center;
+      vertical-align: middle;
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+  }
 }

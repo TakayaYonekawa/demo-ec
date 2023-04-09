@@ -30,6 +30,13 @@
   }
   &__text{
     padding: 5%;
+    &-overflow{
+        text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis; /* Safari */
+        -o-text-overflow: ellipsis; /* Opera */
+        overflow: hidden;
+        white-space: nowrap;
+    }
   }
 
 }

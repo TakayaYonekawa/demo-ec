@@ -36,9 +36,9 @@ function CartContainer() {
   if (totalPrice < 1 || totalPrice === undefined) {
     return (
       <section className="cart">
-        <div>
+        <div className="cart__empty">
           <h2>買い物かご</h2>
-          <h4 className="empty-cart">何も入ってません・・・</h4>
+          <h3 className="cart__empty__text">何も入ってません・・・</h3>
         </div>
       </section>
     );
@@ -46,9 +46,7 @@ function CartContainer() {
 
   return (
     <section className="cart">
-      <div>
-        <h2>買い物かご</h2>
-      </div>
+        <h2 className="cart__title">買い物かご</h2>
       <div>
         {cartShow
           ? cartShow.map((item) => {
@@ -57,19 +55,19 @@ function CartContainer() {
           : ""}
 
       </div>
-      <footer>
+      <div className="cart__total">
         <hr />
-        <div className="cart-total">
-          <h4>
+        <div className="cart__total__price">
+          <h3 className="cart__total__price__text">
             合計 <span>{Math.floor(totalPrice * 100)}円</span>
-          </h4>
+          </h3>
         </div>
-        <div className="clear-btn">
-          <Button className="btn " onClick={() => dispatch(removeAll())}>
+        <div className="cart__total__clear">
+          <Button className="u-btn " onClick={() => dispatch(removeAll())}>
             全削除
           </Button>
         </div>
-      </footer>
+      </div>
     </section>
   );
 }

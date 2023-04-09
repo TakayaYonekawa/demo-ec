@@ -21,16 +21,13 @@ const  DetailInfo = (detail:any) => {
           <h2 className="detail__title__text">{detail.price * 100}円</h2>
           <h3 className="detail__title__text">カテゴリー：{detail.category}</h3>
           <p>{detail.description}</p>
-          <div className="detail__title__text">
             <Button
               variant="contained"
               onClick={() => {dispatch(addCart(detail));}}
-              className="detail__cart_btn"
+              className="detail__btn"
             >
-              
               カートに入れる
             </Button>
-          </div>
         </div>
       </div>
     </>

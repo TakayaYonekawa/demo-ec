@@ -14,26 +14,24 @@ type apiArray = {
 
 function CartItem({ id, image, price, title }: apiArray) {
   const dispatch = useDispatch<AppDispatch>();
-  const { cartItems , cartShow } = useSelector((store) => store.cart);
+  const { cartItems } = useSelector((store) => store.cart);
 
   // 要素数を数える
   let count = cartItems.filter(function(x){return x.id===id}).length;
 
 
-
   return (
-    <article className="cart-item">
+    <section className="cart-item">
       <img src={image} alt={title} className="cart-item__image" />
       <div>
-        <h4>{title}</h4>
-        <h4 className="item-price">{price * 100}円</h4>
-        <button className="remove-btn" onClick={() => dispatch(removeItem(id))}>
+        <h3 className="cart-item__title">{title}</h3>
+        <h3 className="cart-item__price">{price * 100}円</h3>
+        <button className="cart-item__remove" onClick={() => dispatch(removeItem(id))}>
           削除
         </button>
         <p>注文数：{count}</p>
       </div>
-      <div></div>
-    </article>
+    </section>
   );
 }
 

@@ -22,12 +22,12 @@ export const Header = () => {
     <header className="header">
       <div className="container flex">
         <Link to='/'>
-          <h2>デモECサイト</h2>        
+          <h1>デモECサイト</h1>        
         </Link>
-        <div className="cart-logo">
+        <div className="header__cart">
           <Link to='cart'>
             <ShoppingCartIcon/>
-            <span className="cart-logo__amount">
+            <span className="header__cart-amount">
               {totalAmount}
             </span>          
           </Link>
